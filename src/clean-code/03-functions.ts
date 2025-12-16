@@ -40,7 +40,30 @@
 
     }
 
-    
 
+    // Función para obtener el pago de un empleado
+
+    const getPayAmount1 = ({ isDead = false, isSeparated = true, isRetired = false }) => {
+        let result;
+        if ( isDead ) {
+            result = 1500;
+        } else {
+            if ( isSeparated ) {
+                result = 2500;
+            } else {
+                if ( isRetired ) {
+                    result = 3000;
+                } else {
+                    result = 4000; 
+                }
+            }
+        }
+        
+        return result;
+    }
+
+    const getPayAmount2 = ({ isDead = false, isSeparated = true, isRetired = false }): number => {
+        return (isDead) ? 1500 : (isSeparated) ? 2500 : (isRetired) ? 3000 : 4000;
+    }
 
 })();
